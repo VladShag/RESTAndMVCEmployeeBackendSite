@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>All Employees</h2>
+<br>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Department</th>
+        <th>Salary</th>
+        <th>Operations</th>
+    </tr>
+    <th:block th:each="emp : ${allEmps}">
+        <tr>
+            <td th:text="${emp.getName()}"></td>
+            <td th:text="${emp.getSurname()}"></td>
+            <td th:text="${emp.getDepartment()}"></td>
+            <td th:text="${emp.getSalary()}"></td>
+            <td><a href="updateEmpInfo.html" th:href="@{updateEmpInfo/{empId}(empId=${emp.getId()})}">Edit</a><br/>
+                <a href="mvc.html" th:href="@{deleteEmp/{empId}(empId=${emp.getId()})}">Delete</a><br/>
+            </td>
+
+        </tr>
+    </th:block>
+</table>
+</body>
+
+
+
+</html>
