@@ -7,20 +7,25 @@
 <body>
 <h2>Employee Info</h2>
 <br>
-<!--<form th:action="@{/updateEmpInfo}" th:object="${employee}">-->
-<!--    <input type="text" th:field="${employee.getName()}"/>-->
+    <form th:action="@{saveEmployee}" th:object="${employee}">
+        <label> Name
+        <input type="text" th:field="*{name}"/>
+        </label>
+        <br>
+        <label> Surname
+            <input type="text" th:field="*{surname}"/>
+        </label>
+        <br>
+        <label> Department
+            <input type="text" th:field="*{department}"/>
+        </label>
+        <br>
+        <label> Salary
+            <input type="text" th:field="*{salary}"/>
+        </label>
+        <input type="submit" value="Submit"/>
 
-
-<!--</form>-->
-<!--    <h1 th:text="${employee.getName()}">Name</h1> -->
-<!--    <br>-->
-<!--    Surname <form:input path="surname"/>-->
-<!--    <br>-->
-<!--    Department <form:input path="department"/>-->
-<!--    <br>-->
-<!--    Salary <form:input path="salary"/>-->
-<!--    <br>-->
-<!--    <input type="submit" value="OK">-->
+    </form>
 
 </body>
 

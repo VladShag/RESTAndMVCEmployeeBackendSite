@@ -5,9 +5,7 @@ import com.shagal.restandmvcemployeebackendsite.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -33,6 +31,11 @@ public class MyController {
     @RequestMapping("/deleteEmp/{id}")
     public String deleteEmployee(@PathVariable("id") int id) {
         employeeService.deleteEmployee(id);
+        return "redirect:/mvc";
+    }
+    @RequestMapping("/saveEmployee")
+    public String saveEmployee(@ModelAttribute("employee")Employee employee) {
+        employeeService.saveEmployee(employee);
         return "redirect:/mvc";
     }
 }
